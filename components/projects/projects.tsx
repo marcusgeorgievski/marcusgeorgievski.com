@@ -28,8 +28,8 @@ const projects: Project[] = [
 		title: "CodeHome",
 		description:
 			"Full stack platform for users to create, explore, and showcase any coding relating projects",
-		image: "codeHomeImage.png",
-		video: "codeHomeVideo.mov",
+		image: "codehomeImage.png",
+		video: "codehomeVideo.mov",
 		link: "https://codehome.app/",
 		repo: "https://github.com/marcusgeorgievski/codeHome",
 		tags: ["Next.js", "React", "SQL", "Prisma", "Auth", "TypeScript"],
