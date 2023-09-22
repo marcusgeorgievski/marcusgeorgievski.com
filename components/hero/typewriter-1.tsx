@@ -12,7 +12,7 @@ const props = {
 export default function Typer() {
 	return (
 		<span className="font-bold">
-			<span className="opacity-0">d</span>
+			<span className="opacity-0">m</span>
 			<Typewriter {...props} />
 		</span>
 	);
