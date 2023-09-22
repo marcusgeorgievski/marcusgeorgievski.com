@@ -10,7 +10,7 @@ export interface Project {
 	video: string | null;
 	link: string;
 	repo: string;
-	tag: string[];
+	tags: string[];
 }
 
 const projects: Project[] = [
@@ -22,7 +22,7 @@ const projects: Project[] = [
 		video: "chatbotVideo.mov",
 		link: "https://openai-chatbot-demo.vercel.app/",
 		repo: "https://github.com/marcusgeorgievski/openai-chatbot",
-		tag: ["OpenAI", "Redis", "React Query", "Next.js", "TypeScript"],
+		tags: ["OpenAI", "Redis", "React Query", "Next.js", "TypeScript"],
 	},
 	{
 		title: "CodeHome",
@@ -32,7 +32,7 @@ const projects: Project[] = [
 		video: "codeHomeVideo.mov",
 		link: "https://codehome.app/",
 		repo: "https://github.com/marcusgeorgievski/codeHome",
-		tag: ["Next.js", "React", "SQL", "Prisma", "Auth", "TypeScript"],
+		tags: ["Next.js", "React", "SQL", "Prisma", "Auth", "TypeScript"],
 	},
 	{
 		title: "Indeed Skill Scrape",
@@ -42,7 +42,7 @@ const projects: Project[] = [
 		video: null,
 		link: "https://github.com/marcusgeorgievski/indeed-skill-scrape",
 		repo: "https://github.com/marcusgeorgievski/indeed-skill-scrape",
-		tag: ["Python", "Selenium", "Pandas", "bs4", "Matplotlib"],
+		tags: ["Python", "Selenium", "Pandas", "bs4", "Matplotlib"],
 	},
 	{
 		title: "Github",
@@ -51,7 +51,7 @@ const projects: Project[] = [
 		video: null,
 		link: "https://github.com/marcusgeorgievski",
 		repo: "",
-		tag: ["Github"],
+		tags: [],
 	},
 ];
 

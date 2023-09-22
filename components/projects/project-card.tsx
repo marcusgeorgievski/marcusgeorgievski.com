@@ -11,7 +11,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
 	return (
 		<div className="flex flex-col gap-1 ">
-			<div className="rounded-lg overflow-hidden mb-2 border border-slate-300 shadow-lg">
+			<div className="rounded-lg overflow-hidden mb-2 border border-slate-400 dark:border-slate-400/20 shadow-lg">
 				{project.video ? (
 					<video
 						poster={project.image}
@@ -26,13 +26,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 			</div>
 
 			{/* TAGS */}
-			<div className="flex gap-x-1 gap-y-[1px] flex-wrap gap">
-				{project.tag.map((tag) => (
-					<span key={tag}>
-						<Tag tagName={tag} />
-					</span>
-				))}
-			</div>
+			{project.tags.length > 0 && (
+				<div className="flex gap-x-1 gap-y-[1px] flex-wrap gap">
+					{project.tags.map((tag) => (
+						<span key={tag}>
+							<Tag tagName={tag} />
+						</span>
+					))}
+				</div>
+			)}
 
 			{/* DETAILS */}
 			<div>
@@ -47,7 +49,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 						<Link
 							href={project.link}
 							target="_blank"
-							className="rounded border border-slate-300 shadow-md  py-1 px-2 dark:text-slate-400 hover:bg-slate-100 text-black inline-flex font-mono text-xs items-center gap-2 dark:hover:bg-slate-900"
+							className="rounded border dark:border-slate-400 border-slate-300 shadow-md  py-1 px-2 dark:text-slate-400 hover:bg-slate-100 text-black inline-flex font-mono text-xs items-center gap-2 dark:hover:bg-slate-900 hover:scale-[1.04]"
 						>
 							<span className="rounded-full bg-red-600 w-2 h-2 animate-pulse "></span>
 							Live
@@ -56,7 +58,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 					<Link
 						href={project.repo}
 						target="_blank"
-						className="rounded border border-slate-400 p-1 inline-flex hover:bg-slate-100 shadow"
+						className="rounded border border-slate-400 p-1 inline-flex hover:bg-slate-100 dark:hover:bg-slate-800 shadow hover:scale-[1.04]"
 					>
 						<AiFillGithub />
 					</Link>

@@ -23,17 +23,24 @@ export default function Hero() {
 					<Link
 						href="https://github.com/marcusgeorgievski"
 						target="_blank"
-						className="p-[6px] inline-flex border rounded border-blue-600 text-blue-600 hover:bg-blue-500/20 dark:border-green-400 dark:text-green-400 dark:hover:bg-green-400/20"
+						className="p-[6px] inline-flex border rounded border-blue-600 text-blue-600 hover:bg-blue-500/20 dark:border-green-400 dark:text-green-400 dark:hover:bg-green-400/20 hover:scale-[1.04]"
 					>
 						<AiFillGithub />
 					</Link>
 					<Link
 						href="https://www.linkedin.com/in/marcusgeorgievski/"
 						target="_blank"
-						className="p-[6px] inline-flex border rounded border-blue-600 text-blue-600 hover:bg-blue-500/20 dark:border-green-400 dark:text-green-400 dark:hover:bg-green-400/20"
+						className="p-[6px] inline-flex border rounded border-blue-600 text-blue-600 hover:bg-blue-500/20 dark:border-green-400 dark:text-green-400 dark:hover:bg-green-400/20 hover:scale-[1.04]"
 					>
 						<AiFillLinkedin />
 					</Link>
+					<a
+						href="mailto:marcusgeorgievski@outlook.com"
+						target="_blank"
+						className="p-[6px] inline-flex border rounded border-blue-600 text-blue-600 hover:bg-blue-500/20 dark:border-green-400 dark:text-green-400 dark:hover:bg-green-400/20 hover:scale-[1.04]"
+					>
+						<MdEmail />
+					</a>
 				</div>
 			</div>
 			<div className="grid gap-8 pt-8">
@@ -61,17 +68,6 @@ export default function Hero() {
 						<Tag tagName="Python" />, specializing in the skills
 						below.
 					</p>
-					<div className="flex gap-3 items-center">
-						<p>Reach out to me here {"->"}</p>
-						<div className="flex gap-2 items-center">
-							<a
-								href="mailto:marcusgeorgievski@outlook.com"
-								className="p-1 border rounded border-blue-500 text-blue-500 hover:bg-blue-500/20 dark:border-green-400 dark:text-green-400 dark:hover:bg-green-400/20"
-							>
-								<MdEmail />
-							</a>
-						</div>
-					</div>
 				</div>
 			</div>
 		</section>
