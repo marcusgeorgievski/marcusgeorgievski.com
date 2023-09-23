@@ -15,7 +15,7 @@ export default function Hero() {
 				<h3 className="text-4xl  font-bold bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient">
 					Welcome
 				</h3>
-				<p className="-ml-1.5">
+				<p className="-ml-3">
 					<Typer />
 				</p>
 

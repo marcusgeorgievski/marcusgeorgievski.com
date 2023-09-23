@@ -16,6 +16,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 					<video
 						poster={project.image}
 						onMouseOver={(event: any) => event.target.play()}
+						onClick={(event: any) => event.target.play()}
 						onMouseOut={(event: any) => event.target.load()}
 						src={project.video}
 						muted
