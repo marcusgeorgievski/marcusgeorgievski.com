@@ -1,10 +1,18 @@
 import MessageForm from "./message-form";
+import Messages from "./messages";
+import { prisma } from "@/lib/prisma";
 
 interface MessageProps {
-	//children: React.ReactNode;
+	view: string;
 }
 
-export default function Message() {
+export default async function Message({ view }: MessageProps) {
+	const messages = await prisma.message.findMany({
+		orderBy: {
+			createdAt: "desc",
+		},
+	});
+
 	return (
 		<section id="message">
 			<div className="mb-6">
@@ -16,7 +24,11 @@ export default function Message() {
 				</h3>
 			</div>
 
-			<MessageForm />
+			<div className="mb-4">
+				<MessageForm />
+			</div>
+
+			{view && <Messages messages={messages} />}
 		</section>
 	);
 }

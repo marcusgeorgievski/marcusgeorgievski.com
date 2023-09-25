@@ -70,6 +70,10 @@ module.exports = {
 					"50%": { backgroundPosition: "100% 50%" },
 					"100%": { backgroundPosition: "0% 50%" },
 				},
+				blink: {
+					"0%, 100%": { opacity: 0 },
+					"50%": { opacity: 1 },
+				},
 			},
 			backgroundSize: {
 				"300%": "300%",
@@ -78,6 +82,7 @@ module.exports = {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
 				gradient: "animatedgradient 8s ease infinite alternate",
+				blink: "blink 1.8s steps(1) infinite",
 			},
 		},
 	},

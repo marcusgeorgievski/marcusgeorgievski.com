@@ -2,32 +2,9 @@
 import Link from "next/link";
 import ThemeSwitcher from "./theme-switcher";
 import { GiCapybara } from "react-icons/gi";
+import { scrollTo } from "@/lib/utils";
 
 export default function Header() {
-	function scrollTo(section: string) {
-		const element = document.getElementById(section);
-
-		if (section == "home") {
-			window.scrollTo({
-				top: 0,
-				behavior: "smooth",
-			});
-			return;
-		}
-
-		if (element) {
-			let offset = window.innerWidth < 640 ? -100 : -70;
-
-			const elementPosition =
-				element.getBoundingClientRect().top + window.scrollY;
-			const targetScrollPosition = elementPosition + offset;
-
-			window.scrollTo({
-				top: targetScrollPosition,
-				behavior: "smooth",
-			});
-		}
-	}
 	return (
 		<header className="border-b border-blue-300 bg-blue-50/90 dark:border-blue-900/80 dark:bg-[#020626]/90 backdrop-blur-sm fixed top-0 right-0 left-0 z-40">
 			<div className="max-w-[1000px] flex flex-col  gap-2 sm:flex-row justify-between mx-auto px-6 sm:px-4 py-2 sm:py-3">

@@ -40,9 +40,8 @@ const tags: Tag[] = [
 	},
 	{
 		text: "TypeScript",
-		color: "text-white",
+		color: "text-blue-50",
 		bg: "bg-blue-700",
-		border: "border border-slate-500",
 		icon: <SiTypescript />,
 	},
 	{
@@ -72,9 +71,9 @@ const tags: Tag[] = [
 	},
 	{
 		text: "SQL",
-		color: "text-blue-500",
+		color: "text-blue-700",
 		bg: "bg-blue-100",
-		border: "border border-blue-500",
+		border: "border border-blue-600",
 		icon: <BiLogoPostgresql />,
 	},
 	{

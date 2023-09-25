@@ -1,15 +1,17 @@
+"use client";
 import Tag from "../ui/tag";
 import Terminal from "./terminal";
 import Typer from "./typewriter-1";
 import { MdEmail } from "react-icons/md";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import Link from "next/link";
+import { scrollTo } from "@/lib/utils";
 
 export default function Hero() {
 	return (
 		<section
 			id="home"
-			className="items-center pt-8 grid grid-cols-1 md:grid-cols-2 gap-8"
+			className="grid items-center grid-cols-1 gap-8 pt-8 md:grid-cols-2"
 		>
 			<div className="">
 				<h3 className="text-4xl  font-bold bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient">
@@ -19,7 +21,7 @@ export default function Hero() {
 					<Typer />
 				</p>
 
-				<div className="flex mt-6 text-xl gap-2">
+				<div className="flex gap-2 mt-6 text-xl">
 					<Link
 						href="https://github.com/marcusgeorgievski"
 						target="_blank"
@@ -43,7 +45,7 @@ export default function Hero() {
 					</a>
 				</div>
 			</div>
-			<div className="pt-8 grid gap-8">
+			<div className="grid gap-8 pt-8">
 				<Terminal className="text-white w-full max-w-[500px] shadow-lg">
 					<p>
 						<span className="text-green-400">
@@ -51,17 +53,42 @@ export default function Hero() {
 						</span>{" "}
 						<span className="text-red-500">$</span> curl
 						marcusgeorgievski.com
+						<span className="animate-blink">|</span>
 					</p>
 
-					<div className="flex flex-col py-2 pl-6 gap-2">
-						<p> {">"} me</p>
-						<p> {">"} skills</p>
-						<p> {">"} projects</p>
-						<p> {">"} 🇨🇦🇲🇰</p>
+					<div className="flex flex-col gap-2 py-2 pl-6">
+						<button
+							className="flex justify-start hover:text-green-400"
+							onClick={() => scrollTo("home")}
+						>
+							{" "}
+							{">"} me
+						</button>
+						<button
+							className="flex justify-start hover:text-green-400"
+							onClick={() => scrollTo("skills")}
+						>
+							{" "}
+							{">"} skills
+						</button>
+						<button
+							className="flex justify-start hover:text-green-400"
+							onClick={() => scrollTo("projects")}
+						>
+							{" "}
+							{">"} projects
+						</button>
+						<button
+							className="flex justify-start hover:text-green-400"
+							onClick={() => scrollTo("message")}
+						>
+							{" "}
+							{">"} message me!
+						</button>
 					</div>
 				</Terminal>
 
-				<div className="flex flex-col text-black dark:text-gray-300 gap-6">
+				<div className="flex flex-col gap-6 text-black dark:text-gray-300">
 					<p>
 						Strong interest in modern web development with{" "}
 						<Tag tagName="Next.js" /> and data analysis with{" "}
