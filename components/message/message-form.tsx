@@ -98,7 +98,12 @@ export default function MessageForm() {
 					/>
 				</div>
 				<div className="flex flex-col gap-1">
-					<label className="font-mono text-xs">Contact</label>
+					<label className="font-mono text-xs">
+						Contact{" "}
+						<span className="text-slate-400 dark:text-slate-600">
+							(optional)
+						</span>
+					</label>
 					<input
 						type="contact"
 						id="contact"
