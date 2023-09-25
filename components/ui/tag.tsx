@@ -48,7 +48,7 @@ const tags: Tag[] = [
 	{
 		text: "Python",
 		color: "text-yellow-300",
-		bg: "bg-blue-500",
+		bg: "bg-blue-600",
 		icon: <SiPython />,
 	},
 	{

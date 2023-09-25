@@ -11,7 +11,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
 	return (
 		<div className="flex flex-col gap-1 ">
-			<div className="rounded-lg overflow-hidden mb-2 border border-slate-400 dark:border-slate-400/20 shadow-lg">
+			<div className="mb-2 overflow-hidden border rounded-lg shadow-lg border-slate-400 dark:border-slate-400/20">
 				{project.video ? (
 					<video
 						poster={project.image}
@@ -41,7 +41,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 			<div>
 				<h3 className="text-2xl font-semibold">{project.title}</h3>
 
-				<p className="font-medium dark:text-slate-400 text-slate-600 leading-7 mb-4">
+				<p className="mb-4 font-medium dark:text-slate-400 text-slate-600 leading-7">
 					{project.description}
 				</p>
 
@@ -52,7 +52,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 							target="_blank"
 							className="rounded border dark:border-slate-400 border-slate-300 shadow-md  py-1 px-2 dark:text-slate-400 hover:bg-slate-100 text-black inline-flex font-mono text-xs items-center gap-2 dark:hover:bg-slate-900 hover:scale-[1.04]"
 						>
-							<span className="rounded-full bg-red-600 w-2 h-2 animate-pulse "></span>
+							<span className="w-2 h-2 bg-red-600 rounded-full animate-pulse "></span>
 							Live
 						</Link>
 					)}

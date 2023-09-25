@@ -59,9 +59,9 @@ export default function Projects() {
 	return (
 		<section id="projects">
 			<div className="mb-6">
-				<h3 className="text-4xl font-bold border-b pb-2 mb-3  border-slate-400 dark:border-slate-700">
+				<h3 className="pb-2 mb-3 text-4xl font-bold border-b  border-slate-400 dark:border-slate-700">
 					Projects
-					<p className="font-mono dark:text-green-400 text-blue-600 text-xs font-thin mt-1">
+					<p className="mt-1 font-mono text-xs font-thin text-blue-600 dark:text-green-400">
 						Hover/click on an image to watch a preview
 					</p>
 				</h3>

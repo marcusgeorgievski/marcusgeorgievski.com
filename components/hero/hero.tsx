@@ -9,7 +9,7 @@ export default function Hero() {
 	return (
 		<section
 			id="home"
-			className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center pt-8"
+			className="items-center pt-8 grid grid-cols-1 md:grid-cols-2 gap-8"
 		>
 			<div className="">
 				<h3 className="text-4xl  font-bold bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient">
@@ -19,7 +19,7 @@ export default function Hero() {
 					<Typer />
 				</p>
 
-				<div className="flex gap-2 text-xl mt-6">
+				<div className="flex mt-6 text-xl gap-2">
 					<Link
 						href="https://github.com/marcusgeorgievski"
 						target="_blank"
@@ -43,7 +43,7 @@ export default function Hero() {
 					</a>
 				</div>
 			</div>
-			<div className="grid gap-8 pt-8">
+			<div className="pt-8 grid gap-8">
 				<Terminal className="text-white w-full max-w-[500px] shadow-lg">
 					<p>
 						<span className="text-green-400">
@@ -53,7 +53,7 @@ export default function Hero() {
 						marcusgeorgievski.com
 					</p>
 
-					<div className="flex flex-col gap-2 pl-6 py-2">
+					<div className="flex flex-col py-2 pl-6 gap-2">
 						<p> {">"} me</p>
 						<p> {">"} skills</p>
 						<p> {">"} projects</p>
@@ -61,7 +61,7 @@ export default function Hero() {
 					</div>
 				</Terminal>
 
-				<div className="dark:text-gray-300 flex flex-col gap-6 text-black">
+				<div className="flex flex-col text-black dark:text-gray-300 gap-6">
 					<p>
 						Strong interest in modern web development with{" "}
 						<Tag tagName="Next.js" /> and data analysis with{" "}

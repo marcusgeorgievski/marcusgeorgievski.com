@@ -16,11 +16,9 @@ export default function ThemeSwitcher() {
 		return null;
 	}
 
-	console.log(theme);
-
 	return (
 		<button
-			className="p-1 rounded-md border border-blue-700"
+			className="p-1 border border-blue-700 rounded-md"
 			onClick={(e) =>
 				theme === "dark" ? setTheme("light") : setTheme("dark")
 			}

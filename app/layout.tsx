@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/ui/header";
 import ThemeProvider from "@/providers/theme-provider";
+import { Toaster } from "@/components/shadcn/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
 						<Header />
 					</div>
 					{children}
+					<Toaster />
 				</ThemeProvider>
 			</body>
 		</html>

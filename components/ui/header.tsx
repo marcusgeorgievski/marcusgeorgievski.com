@@ -16,7 +16,7 @@ export default function Header() {
 		}
 
 		if (element) {
-			const offset = -60; // Adjust the offset as needed
+			let offset = window.innerWidth < 640 ? -100 : -70;
 
 			const elementPosition =
 				element.getBoundingClientRect().top + window.scrollY;
@@ -36,7 +36,7 @@ export default function Header() {
 						window.scrollTo({ top: 0, behavior: "smooth" })
 					}
 				>
-					<h1 className="font-semibold text-xl flex gap-2 items-center">
+					<h1 className="flex items-center gap-2 text-xl font-semibold">
 						<GiCapybara className="text-indigo-600" />
 						Marcus Georgievski
 					</h1>
@@ -46,21 +46,27 @@ export default function Header() {
 					<nav className="flex items-center gap-4 ">
 						<button
 							onClick={() => scrollTo("home")}
-							className="flex items-center gap-4 font-medium text-sm text-blue-700 transition-all hover:underline underline-offset-2"
+							className="flex items-center gap-4 text-sm font-medium text-blue-700 transition-all hover:underline underline-offset-2"
 						>
 							Home
 						</button>
 						<button
 							onClick={() => scrollTo("skills")}
-							className="flex items-center gap-4 font-medium text-sm text-blue-700 transition-all hover:underline underline-offset-2"
+							className="flex items-center gap-4 text-sm font-medium text-blue-700 transition-all hover:underline underline-offset-2"
 						>
 							Skills
 						</button>
 						<button
 							onClick={() => scrollTo("projects")}
-							className="flex items-center gap-4 font-medium text-sm text-blue-700 transition-all hover:underline underline-offset-2"
+							className="flex items-center gap-4 text-sm font-medium text-blue-700 transition-all hover:underline underline-offset-2"
 						>
 							Projects
+						</button>
+						<button
+							onClick={() => scrollTo("message")}
+							className="flex items-center gap-4 text-sm font-medium text-blue-700 transition-all hover:underline underline-offset-2"
+						>
+							Message
 						</button>
 					</nav>
 					<ThemeSwitcher />
