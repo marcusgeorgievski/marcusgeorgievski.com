@@ -30,7 +30,7 @@ export default function MessageForm() {
 		// Validate non-empty name and message
 		if (!validate()) {
 			toast({
-				title: "Hi",
+				title: "Sorry!",
 				variant: "destructive",
 				description: "Name and message cannot be empty!",
 			});

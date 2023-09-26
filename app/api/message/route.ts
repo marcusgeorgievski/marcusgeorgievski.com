@@ -31,3 +31,24 @@ export async function POST(req: Request) {
 		);
 	}
 }
+
+export async function DELETE(req: Request) {
+	try {
+		// Get body
+		const data: { id: any } = await req.json();
+
+		// Create message
+		const deletedMessage = await prisma.message.delete({
+			where: { id: data.id },
+		});
+
+		return NextResponse.json({ data: deletedMessage }, { status: 200 });
+	} catch (error) {
+		console.error("Error deleting message:", error);
+
+		return NextResponse.json(
+			{ error: "Internal server error" },
+			{ status: 500 }
+		);
+	}
+}
