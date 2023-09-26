@@ -89,7 +89,7 @@ export default function Hero() {
 				</Terminal>
 
 				<div className="flex flex-col gap-6 text-black dark:text-gray-300">
-					<p>
+					<p className="leading-7">
 						Strong interest in modern web development with{" "}
 						<Tag tagName="Next.js" /> and data analysis with{" "}
 						<Tag tagName="Python" />, specializing in the skills
