@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { Message } from "@/lib/types";
+import sendEmail from "@/lib/utils/sendEmail";
 
 export async function POST(req: Request) {
 	try {
@@ -16,16 +17,8 @@ export async function POST(req: Request) {
 			},
 		});
 
-		const URL = "http://localhost:3000";
-
 		// Send email
-		await fetch(`${URL}/api/email`, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ message: newMessage }),
-		});
+		const emailData = await sendEmail(data);
 
 		return NextResponse.json({ data: newMessage }, { status: 200 });
 	} catch (error) {

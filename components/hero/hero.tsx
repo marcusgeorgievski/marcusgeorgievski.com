@@ -5,7 +5,7 @@ import Typer from "./typewriter-1";
 import { MdEmail } from "react-icons/md";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import Link from "next/link";
-import { scrollTo } from "@/lib/utils";
+import { scrollTo } from "@/lib/utils/misc";
 
 export default function Hero() {
 	return (

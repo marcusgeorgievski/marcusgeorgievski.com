@@ -2,7 +2,7 @@
 import Link from "next/link";
 import ThemeSwitcher from "./theme-switcher";
 import { GiCapybara } from "react-icons/gi";
-import { scrollTo } from "@/lib/utils";
+import { scrollTo } from "@/lib/utils/misc";
 
 export default function Header() {
 	return (
