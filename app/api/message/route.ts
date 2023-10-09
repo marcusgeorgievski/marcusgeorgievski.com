@@ -1,11 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-
-interface Message {
-	name: string;
-	contact?: string;
-	message: string;
-}
+import { Message } from "@/lib/types";
 
 export async function POST(req: Request) {
 	try {
@@ -17,8 +12,19 @@ export async function POST(req: Request) {
 			data: {
 				name: data.name,
 				contact: data.contact,
-				message: data.message,
+				body: data.body,
 			},
+		});
+
+		const URL = "http://localhost:3000";
+
+		// Send email
+		await fetch(`${URL}/api/email`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ message: newMessage }),
 		});
 
 		return NextResponse.json({ data: newMessage }, { status: 200 });

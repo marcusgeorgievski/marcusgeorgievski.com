@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useToast } from "@/components/shadcn/ui/use-toast";
 import { ToastAction } from "@/components/shadcn/ui/toast";
 import { useRouter } from "next/navigation";
+import Loading from "./loading";
 
 interface MessageFormProps {
 	//children: React.ReactNode;
@@ -12,20 +13,21 @@ interface MessageFormProps {
 export default function MessageForm() {
 	const [name, setName] = useState("");
 	const [contact, setContact] = useState("");
-	const [message, setMessage] = useState("");
-	const [disabled, setDisabled] = useState(false);
+	const [body, setBody] = useState("");
+	const [loading, setLoading] = useState(false);
 
 	const { toast } = useToast();
 	const router = useRouter();
 
 	// Validate non-empty name and message
 	function validate(): boolean {
-		if (name.trim() === "" || message.trim() === "") return false;
+		if (name.trim() === "" || body.trim() === "") return false;
 		return true;
 	}
 
 	async function handleSubmit(e: any) {
 		e.preventDefault();
+		setLoading(true);
 
 		// Validate non-empty name and message
 		if (!validate()) {
@@ -42,7 +44,7 @@ export default function MessageForm() {
 			body: JSON.stringify({
 				name,
 				contact,
-				message,
+				body,
 			}),
 			headers: {
 				"Content-Type": "application/json",
@@ -65,12 +67,11 @@ export default function MessageForm() {
 					action: <ToastAction altText="yep">{":)"}</ToastAction>,
 				});
 
-				setDisabled(true);
 				router.refresh();
 
 				setTimeout(() => {
-					setDisabled(false);
-				}, 6000);
+					setLoading(false);
+				}, 4000);
 			}
 
 			return res;
@@ -79,7 +80,7 @@ export default function MessageForm() {
 		const responseBody = await res.json();
 
 		// Clean up
-		setMessage("");
+		setBody("");
 	}
 
 	return (
@@ -119,23 +120,23 @@ export default function MessageForm() {
 			<div className="flex flex-col gap-1">
 				<label className="font-mono text-xs">Message</label>
 				<textarea
-					id="message"
+					id="body"
 					className="w-full h-24 p-2 rounded-md resize-none bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 outline-blue-800"
 					placeholder="Write your message here..."
-					value={message}
-					onChange={(e) => setMessage(e.target.value)}
+					value={body}
+					onChange={(e) => setBody(e.target.value)}
 				></textarea>
 			</div>
 
 			<div>
 				<button
 					type="submit"
-					disabled={disabled}
+					disabled={loading}
 					className={`px-2 py-1 font-semibold text-black bg-green-400 rounded-md hover:scale-[1.06] transition-all mt-4 float-right   ${
-						disabled && "opacity-50"
+						loading && "opacity-50"
 					}`}
 				>
-					Send
+					{loading ? <Loading /> : "Send"}
 				</button>
 			</div>
 		</form>
