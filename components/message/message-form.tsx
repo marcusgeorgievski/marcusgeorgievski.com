@@ -36,6 +36,9 @@ export default function MessageForm() {
 				variant: "destructive",
 				description: "Name and message cannot be empty!",
 			});
+			setTimeout(() => {
+				setLoading(false);
+			}, 2000);
 			return;
 		}
 
@@ -68,10 +71,6 @@ export default function MessageForm() {
 				});
 
 				router.refresh();
-
-				setTimeout(() => {
-					setLoading(false);
-				}, 4000);
 			}
 
 			return res;
@@ -81,6 +80,10 @@ export default function MessageForm() {
 
 		// Clean up
 		setBody("");
+
+		setTimeout(() => {
+			setLoading(false);
+		}, 3000);
 	}
 
 	return (
