@@ -41,15 +41,16 @@ export default async function sendEmail(message: Message) {
 			html: template(message),
 		};
 
-		const mail = await transporter.sendMail(
-			mailData,
-			function (err: any, info: any) {
-				if (err) console.log(err);
-				else console.log(info);
-			}
-		);
-
-		return mail;
+		await new Promise((resolve, reject) => {
+			transporter.sendMail(mailData, (err: any, info: any) => {
+				if (err) {
+					console.error(err);
+					reject(err);
+				} else {
+					resolve(info);
+				}
+			});
+		});
 	} catch (error) {
 		throw new Error("Error sending email");
 	}

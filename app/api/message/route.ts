@@ -18,7 +18,7 @@ export async function POST(req: Request) {
 		});
 
 		// Send email
-		const emailData = await sendEmail(data);
+		await sendEmail(data);
 
 		return NextResponse.json({ data: newMessage }, { status: 200 });
 	} catch (error) {
