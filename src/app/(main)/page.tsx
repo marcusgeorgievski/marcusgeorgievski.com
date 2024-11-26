@@ -34,8 +34,8 @@ function HomeContent() {
   return (
     <div className="space-y-6 text">
       <p>
-        Student at the <strong>University of Guelph</strong> studying Computer
-        Science.
+        Honours Computer Science student at the{" "}
+        <strong>University of Guelph</strong>.
       </p>
 
       <p>
@@ -52,10 +52,9 @@ function HomeContent() {
       </p> */}
 
       <p className="flex-1">
-        Passionate about Systems Design and DevOps, focusing on building
-        high-performance, fault-tolerant systems with exceptional user
-        experience. Currently learning <Code bg>Go</Code>, <Code bg>.NET</Code>{" "}
-        and other backend technologies.
+        Passionate about Systems Design and DevOps for building high-performant
+        and fault-tolerant systems. Currently learning <Code bg>Go</Code>,{" "}
+        <Code bg>.NET</Code> and other backend technologies.
       </p>
 
       <p className="text">

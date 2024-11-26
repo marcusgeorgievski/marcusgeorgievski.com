@@ -17,7 +17,9 @@ export default function Header() {
       const element = document.getElementById(section);
 
       const top = document.documentElement.scrollTop;
-      if (top > 75) {
+
+      console.log(top);
+      if (top > 60) {
         setScrolling(true);
       } else {
         setScrolling(false);
@@ -39,7 +41,8 @@ export default function Header() {
     };
 
     const curr = window.scrollY;
-    if (curr > 75) {
+    console.log(curr);
+    if (curr > 60) {
       setScrolling(true);
     } else {
       setScrolling(false);
@@ -56,8 +59,9 @@ export default function Header() {
       <header
         className={cn(
           "sm:w-full w-full py-2 rounded-lg flex gap-4 mx-auto z-40 sm:justify-between px-4 \
-          backdrop-blur-sm transition-all bg-transparent border border-transparent",
-          scrolling && "bg-[#0c0c0c]/90 border-zinc-900 transition-all"
+          backdrop-blur-none transition-all bg-transparent border border-transparent",
+          scrolling &&
+            "bg-[#0c0c0c]/90 border-zinc-900 backdrop-blur-sm transition-all"
         )}
       >
         <nav className="flex sm:gap-3 gap-2 text-sm">
