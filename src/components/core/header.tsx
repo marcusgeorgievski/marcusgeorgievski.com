@@ -32,6 +32,7 @@ export default function Header() {
         }
       }
     });
+
     return activeSection;
   }
 
@@ -55,10 +56,10 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="max-w-[800px] px-0 lg-px-0  sticky top-6 z-40  ">
+    <div className="max-w-[800px] sticky top-6 z-40">
       <header
         className={cn(
-          "sm:w-full w-full py-2 rounded-lg flex gap-4 mx-auto z-40 sm:justify-between px-4 \
+          "sm:w-full w-full py-2 rounded-lg flex gap-4 mx-auto z-40 sm:justify-between px-2 \
           backdrop-blur-none transition-all bg-transparent border border-transparent",
           scrolling &&
             "bg-[#0c0c0c]/90 border-zinc-900 backdrop-blur-sm transition-all"

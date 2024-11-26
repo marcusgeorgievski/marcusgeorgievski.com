@@ -1,10 +1,10 @@
 "use client";
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import ProjectCard, { ProjectCardMinimal } from "./project-card";
 import { projects } from "@/data/projects";
-import { Button } from "../ui/button";
 
 export default function Projects({
   className,

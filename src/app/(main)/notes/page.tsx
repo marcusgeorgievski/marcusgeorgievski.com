@@ -1,6 +1,9 @@
+"use client";
 import NotesSection from "@/components/notes/notes-section";
+import { Button } from "@/components/ui/button";
 import { readingList } from "@/data/notes";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function NotesPage() {
   return (
@@ -12,14 +15,22 @@ export default function NotesPage() {
 }
 
 function NotesList() {
+  const [showAll, setShowAll] = useState(false);
+
+  const readingListToShow = showAll ? readingList : readingList.slice(0, 5);
+
   return (
     <div className="text-sm sm:text-base text-slate-400 leading-7 flex flex-col gap-2">
       <p>Reading list:</p>
 
       <ul className="list-disc pl-6 space-y-0.5">
-        {readingList.map((item, index) => (
+        {readingListToShow.slice().map((item, index) => (
           <li key={index}>
-            <Link href={item.href} className="border-b hover:border-zinc-700">
+            <Link
+              href={item.href}
+              target="_blank"
+              className="border-b hover:border-zinc-700"
+            >
               {item.title}
             </Link>
             {item.status && (
@@ -30,6 +41,16 @@ function NotesList() {
           </li>
         ))}
       </ul>
+
+      <div className="pl-2">
+        <Button
+          variant="link"
+          className="text-indigo-400 underline underline-offset-2"
+          onClick={() => setShowAll(showAll ? false : true)}
+        >
+          {showAll ? "hide some" : "show all"}
+        </Button>
+      </div>
     </div>
   );
 }

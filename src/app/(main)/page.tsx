@@ -57,11 +57,20 @@ function HomeContent() {
         <Code bg>.NET</Code> and other backend technologies.
       </p>
 
-      <p className="text">
-        You can find my work <PageLink href="/experience">experiences</PageLink>
-        , <PageLink href="/projects">projects</PageLink> I&apos;m working on,
-        and <PageLink href="/notes">notes</PageLink> on what I&apos;m reading.
-      </p>
+      <div className="space-y-2">
+        <p>Here you can find my...</p>
+        <ul className="list-disc pl-5">
+          <li>
+            Work <PageLink href="/experience">experience</PageLink> and resume
+          </li>
+          <li>
+            <PageLink href="/projects">Projects</PageLink> I&apos;m working on
+          </li>
+          <li>
+            <PageLink href="/notes">Notes</PageLink> on what I&apos;m reading
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

@@ -24,24 +24,40 @@ export const notes: Note[] = [
 export const readingList: ReadingItem[] = [
   {
     title: "Learning Go",
-    href: "#",
+    href: "https://www.oreilly.com/library/view/learning-go/9781492077206/",
     status: "in progress",
   },
 
   {
     title: "Designing Data-Intensive Applications",
-    href: "#",
+    href: "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/",
   },
   {
     title: "Database Internals",
-    href: "#",
+    href: "https://www.databass.dev/",
   },
   {
     title: "C# 12 in a Nutshell",
-    href: "#",
+    href: "https://www.oreilly.com/library/view/c-12-in/9781098147433/",
   },
   {
     title: "Mastering Agorithms with C",
-    href: "#",
+    href: "https://www.oreilly.com/library/view/mastering-algorithms-with/1565924533/",
+  },
+  {
+    title: "Understanding and Using C Pointers",
+    href: "https://www.oreilly.com/library/view/understanding-and-using/9781449344535/",
+  },
+  {
+    title: "The Linux Programming Interface",
+    href: "https://man7.org/tlpi/",
+  },
+  {
+    title: "Operating Systems: Three Easy Pieces",
+    href: "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+  },
+  {
+    title: "Introduction to Algorithms",
+    href: "https://en.wikipedia.org/wiki/Introduction_to_Algorithms",
   },
 ];

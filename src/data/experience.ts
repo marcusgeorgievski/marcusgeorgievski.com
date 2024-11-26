@@ -34,6 +34,7 @@ export const experiences: Experience[] = [
     to: "Dec 2024",
     location: "Toronto, Ontario",
     description: "📈 Internal Shareholder Application",
+    // Curr bullet in helpers.tsx
     bullets: [
       "Developed a secure shareholder portal using Angular and .NET with Azure, helping 1500+ employees manage their shares easily.",
     ],
@@ -41,7 +42,7 @@ export const experiences: Experience[] = [
   {
     image: "/seneca.svg",
     alt: "Seneca Polytechnic",
-    title: "Full-Stack Developer",
+    title: "Full-Stack Developer (contract)",
     company: "Seneca Polytechnic",
     companyLink: "https://www.senecapolytechnic.ca/innovation/research.html",
     from: "Jun 2024",
@@ -54,7 +55,3 @@ export const experiences: Experience[] = [
     ],
   },
 ];
-
-export function getActiveExperiences() {
-  return experiences.filter((e) => e.active !== false);
-}

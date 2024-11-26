@@ -17,11 +17,11 @@ function ResumeButton() {
   return (
     <button
       onClick={() => window.open("/resume.pdf")}
-      className="text-xs sm:text-xsflex gap-1 items-center"
+      className="text-xs sm:text-xs flex gap-1.5 items-center"
     >
-      📄
-      <span className="underline underline-offset-2">
-        <Code className="text-sm sm:text-sm text-slate-300 hover:text-slate-100">
+      <span>📄</span>
+      <span className="border-b border-slate-400 hover:border-slate-100">
+        <Code className="text-sm sm:text-sm text-slate-400  hover:text-slate-100">
           view resume
         </Code>
       </span>

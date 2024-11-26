@@ -6,9 +6,7 @@ export default function ProjectsPage() {
     <div className="space-y-10">
       <p className="text">
         Currently working on <Code>bytes</Code> to expand my understanding of
-        modern software development through practical, focused projects. Each
-        byte tackles a fundamental concept that can be applied to larger
-        production systems.
+        software development through practical, focused projects.
       </p>
 
       <Projects listOnly />

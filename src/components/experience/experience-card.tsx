@@ -1,4 +1,5 @@
 import { Experience } from "@/data/experience";
+import { experienceHtmlBullets } from "@/data/helpers";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,13 +16,18 @@ export default function ExperienceCard({
   bullets,
 }: Experience) {
   function getInfo() {
+    const res = experienceHtmlBullets(company);
+
+    if (res != null) {
+      return res;
+    }
     if (bullets) {
       return (
         <ul className="space-y-1">
           {bullets.map((responsibility, index) => (
             <li
               key={index}
-              className="ml-[55px] sm:ml-[60px] text-slate-300 list-disc"
+              className="ml-[53px] sm:ml-[56px] text-slate-300 list-disc"
             >
               {responsibility}
             </li>
@@ -33,7 +39,7 @@ export default function ExperienceCard({
     if (description) {
       return (
         <ul className="space-y-1">
-          <li className="ml-[55px] sm:ml-[60px] text-slate-300 list-disc">
+          <li className="ml-[53px] sm:ml-[56px] text-slate-300 list-disc">
             {description}
           </li>
         </ul>

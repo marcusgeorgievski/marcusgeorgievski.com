@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="pb-10 opacity-60">
+    <div className="pb-10 opacity-60 mt-6">
       <nav className="items-center gap-4 text-slate-300 flex flex-col w-full">
         {socials.map((social, index) => {
           return (
@@ -23,9 +23,11 @@ export default function Footer() {
                 target="_blank"
                 className="underline underline-offset-2"
               >
-                <Code>{social.tag}</Code>
-              </Link>
-              {/* <SocialIcon social={social} index={index} /> */}
+                <Code className="space-x-0.5">
+                  <span>@</span>
+                  <span>{social.tag.slice(1)}</span>
+                </Code>
+              </Link>{" "}
             </div>
           );
         })}
