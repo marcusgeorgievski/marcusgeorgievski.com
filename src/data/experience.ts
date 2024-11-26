@@ -50,7 +50,7 @@ export const experiences: Experience[] = [
     location: "Toronto, Ontario",
     description: "🧪 Applied Research Portal",
     bullets: [
-      "Contributed to the development of an applied research portal",
+      "Supported the development of an applied research portal",
       "Led weekly code reviews and mentored teammates, optimized database schema and query patterns",
     ],
   },

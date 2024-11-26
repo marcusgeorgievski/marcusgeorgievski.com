@@ -34,13 +34,12 @@ function HomeContent() {
   return (
     <div className="space-y-6 text">
       <p>
-        Honours Computer Science student at the{" "}
-        <strong>University of Guelph</strong>.
+        Computer Science student at the <strong>University of Guelph</strong>.
       </p>
 
       <p>
         Currently working as a{" "}
-        <strong>Software Developer @ KORE Solutions</strong> working on an
+        <strong>Software Developer @ KORE Solutions</strong> developing an
         internal shareholder portal application, focusing on security and
         maintainability.
       </p>
@@ -52,8 +51,8 @@ function HomeContent() {
       </p> */}
 
       <p className="flex-1">
-        Passionate about Systems Design and DevOps for building high-performant
-        and fault-tolerant systems. Currently learning <Code bg>Go</Code>,{" "}
+        Passionate about systems design and DevOps for building high-performant,
+        fault-tolerant systems. Learning <Code bg>Go</Code>,{" "}
         <Code bg>.NET</Code> and other backend technologies.
       </p>
 
