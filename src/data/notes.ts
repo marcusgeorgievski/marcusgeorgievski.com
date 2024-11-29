@@ -42,7 +42,7 @@ export const readingList: ReadingItem[] = [
   },
   {
     title: "C Programming: A Modern Approach",
-    href: "https://www.oreilly.com/library/view/mastering-algorithms-with/1565924533/",
+    href: "http://knking.com/books/c2/",
   },
   {
     title: "Mastering Algorithms with C",
