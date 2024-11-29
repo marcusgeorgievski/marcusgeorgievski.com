@@ -11,7 +11,7 @@ export default function NoteCard({ title, description, link, tags }: Note) {
       className="md:gap-8 p-2 w-full h-full py-3 block transition-all hover:bg-accent/40 rounded  group/project"
       aria-label={title}
     >
-      <div className="group-hover/project:translate-x-2 transition-all">
+      <div className="group-hover/project:translate-x-1 transition-all">
         <div className="font-semibold text-lg mb-2 flex items-center gap-3">
           {title} <ArrowTopRightIcon />
         </div>

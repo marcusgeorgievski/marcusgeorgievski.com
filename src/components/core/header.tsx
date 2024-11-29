@@ -4,6 +4,7 @@ import { cn } from "../../lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import { jetBrainsMono } from "@/lib/fonts";
 
 export default function Header() {
   const [currSection, setCurrSection] = useState("me");
@@ -65,13 +66,13 @@ export default function Header() {
             "bg-[#0c0c0c]/90 border-zinc-900 backdrop-blur-sm transition-all"
         )}
       >
-        <nav className="flex sm:gap-3 gap-2 text-sm">
+        <nav className={"flex sm:gap-3 gap-2"}>
           {routes.map((route) => (
             <RouteLink key={route.path} route={route} />
           ))}
         </nav>
 
-        <nav className="items-center gap-4 text-[#ebebeb] sm:flex hidden">
+        <nav className="items-center gap-4 text-slate-300 sm:flex hidden">
           {socials.map((social, index) => (
             <SocialIcon key={index} social={social} index={index} />
           ))}
@@ -89,12 +90,15 @@ function RouteLink({ route }: { route: Route }) {
   return (
     <Link
       href={route.path}
-      className={`${
+      className={cn(
+        jetBrainsMono.className,
+        "px-3 py-0.5 rounded-full transition-all text-xs",
         isCurrentRoute
           ? "text-[#8eb0ff] bg-[#11275c] font-medium"
-          : "text-[#b4b4b4]"
-      } px-3 py-0.5 rounded-full transition-all`}
+          : "text-slate-300 hover:text-slate-50"
+      )}
     >
+      {/* / */}
       {route.label}
     </Link>
   );

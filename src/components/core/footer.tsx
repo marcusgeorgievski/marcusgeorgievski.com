@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div className="pb-10 opacity-60 mt-6">
-      <nav className="items-center gap-4 text-slate-300 flex flex-col w-full">
+      <nav className="items-center gap-4 text-slate-400 flex flex-col w-full">
         {socials.map((social, index) => {
           return (
             <div
@@ -23,7 +23,7 @@ export default function Footer() {
                 target="_blank"
                 className="underline underline-offset-2"
               >
-                <Code className="space-x-0.5">
+                <Code className="space-x-0.5 text-slate-400">
                   <span>@</span>
                   <span>{social.tag.slice(1)}</span>
                 </Code>

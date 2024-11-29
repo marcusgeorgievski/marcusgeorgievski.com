@@ -41,7 +41,11 @@ export const readingList: ReadingItem[] = [
     href: "https://www.oreilly.com/library/view/c-12-in/9781098147433/",
   },
   {
-    title: "Mastering Agorithms with C",
+    title: "C Programming: A Modern Approach",
+    href: "https://www.oreilly.com/library/view/mastering-algorithms-with/1565924533/",
+  },
+  {
+    title: "Mastering Algorithms with C",
     href: "https://www.oreilly.com/library/view/mastering-algorithms-with/1565924533/",
   },
   {

@@ -13,18 +13,16 @@ export default function ExperiencePage() {
   );
 }
 
-function ResumeButton() {
+export function ResumeButton() {
   return (
     <button
       onClick={() => window.open("/resume.pdf")}
-      className="text-xs sm:text-xs flex gap-1.5 items-center"
+      className="flex gap-1.5 items-center text-slate-400"
     >
-      <span>📄</span>
-      <span className="border-b border-slate-400 hover:border-slate-100">
-        <Code className="text-sm sm:text-sm text-slate-400  hover:text-slate-100">
-          view resume
-        </Code>
-      </span>
+      <span className="text-xs">{">"}</span>
+      <Code className="text-sm text-slate-400  hover:text-slate-100 underline underline-offset-2 decoration-slate-400">
+        view resume
+      </Code>
     </button>
   );
 }

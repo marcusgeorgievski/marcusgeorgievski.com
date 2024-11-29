@@ -3,20 +3,21 @@ import { jetBrainsMono } from "../../lib/fonts";
 
 type PageHeaderProps = {
   title: string;
-  subtitle?: string;
+
   mono?: boolean;
   children?: React.ReactNode;
 };
 
 export function PageHeader({
   title,
-  subtitle,
+
   mono = false,
   children,
 }: PageHeaderProps) {
   if (title === "/") {
     title = "/Marcus Georgievski";
   }
+
   return (
     <div className="flex flex-col gap-6">
       <div>
@@ -34,8 +35,8 @@ export function PageHeader({
             /{title.toLowerCase().slice(1)}
           </h1>
         )}
-        {subtitle && (
-          <h2 className="text-lg text-slate-200 mb-8 ">{subtitle}</h2>
+        {title === "/Marcus Georgievski" && (
+          <h2 className="text-lg text-slate-500 ">Software Developer</h2>
         )}
       </div>
       {children && <div>{children}</div>}

@@ -36,7 +36,8 @@ export const experiences: Experience[] = [
     description: "📈 Internal Shareholder Application",
     // Curr bullet in helpers.tsx
     bullets: [
-      "Developed a secure shareholder portal using Angular and .NET with Azure, helping 1500+ employees manage their shares easily.",
+      "Developing a secure shareholder portal for 1500+ employees using Angular and .NET with Azure",
+      "Driving MVP delivery while ensuring robust security and pixel-perfect UI/UX",
     ],
   },
   {
@@ -50,8 +51,8 @@ export const experiences: Experience[] = [
     location: "Toronto, Ontario",
     description: "🧪 Applied Research Portal",
     bullets: [
-      "Supported the development of an applied research portal",
-      "Led weekly code reviews and mentored teammates, optimized database schema and query patterns",
+      "Supported the development and delivery of an applied research portal",
+      "Led weekly code reviews, optimized database schema and query patterns, boosted bug resolution rate",
     ],
   },
 ];

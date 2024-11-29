@@ -29,7 +29,7 @@ function NotesList() {
             <Link
               href={item.href}
               target="_blank"
-              className="border-b hover:border-zinc-700"
+              className="underline underline-offset-2 decoration-slate-700 hover:decoration-slate-500"
             >
               {item.title}
             </Link>

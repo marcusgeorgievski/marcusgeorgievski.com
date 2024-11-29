@@ -20,8 +20,8 @@ export function Code({ children, className, bg = false }: CodeProps) {
     <span
       className={cn(
         jetBrainsMono.className,
-        bg && "bg-zinc-800",
-        "text-sm tracking-wide text-slate-300 leading-7  rounded-sm px-1 py-0.5",
+        bg && "bg-slate-800/85 ",
+        "text-sm tracking-wide text-slate-300 leading-7  rounded-sm px-1 py-[0.5px]",
         className
       )}
     >

@@ -36,26 +36,27 @@ function HomeContent() {
       <p>
         Computer Science student at the <strong>University of Guelph</strong>.
       </p>
-
       <p>
         Currently working as a{" "}
-        <strong>Software Developer @ KORE Solutions</strong> developing an
-        internal shareholder portal application, focusing on security and
-        maintainability.
+        <Link
+          href={"/experience"}
+          className="underline underline-offset-2 decoration-slate-600 hover:decoration-slate-500 font-semibold"
+        >
+          Software Developer @ KORE Solutions
+        </Link>{" "}
+        building an internal shareholder portal application, focusing on
+        security and maintainability.
       </p>
-
       {/* <p>
         Currently working as a <strong>Software Developer @ Dayforce</strong> on
         the platform architecture team, focusing on building scalable and
         improving developer experience.
       </p> */}
-
       <p className="flex-1">
-        Passionate about systems design and DevOps for building high-performant,
-        fault-tolerant systems. Learning <Code bg>Go</Code>,{" "}
+        Interested in systems design and DevOps for building high-performance
+        and fault-tolerant systems. Learning <Code bg>Go</Code>,{" "}
         <Code bg>.NET</Code> and other backend technologies.
       </p>
-
       <div className="space-y-2">
         <p>Here you can find my...</p>
         <ul className="list-disc pl-5">
