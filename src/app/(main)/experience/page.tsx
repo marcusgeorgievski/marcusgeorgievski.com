@@ -13,7 +13,7 @@ export default function ExperiencePage() {
   );
 }
 
-export function ResumeButton() {
+function ResumeButton() {
   return (
     <button
       onClick={() => window.open("/resume.pdf")}
