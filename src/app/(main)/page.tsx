@@ -57,33 +57,6 @@ function HomeContent() {
         and fault-tolerant systems. Learning <Code bg>Go</Code>,{" "}
         <Code bg>.NET</Code> and other backend technologies.
       </p>
-      <div className="space-y-2">
-        <p>Here you can find my...</p>
-        <ul className="list-disc pl-5">
-          <li>
-            Work <PageLink href="/experience">experience</PageLink> and resume
-          </li>
-          <li>
-            <PageLink href="/projects">Projects</PageLink> I&apos;m working on
-          </li>
-          <li>
-            <PageLink href="/notes">Notes</PageLink> on what I&apos;m reading
-          </li>
-        </ul>
-      </div>
     </div>
-  );
-}
-
-interface PageLinkProps {
-  children: React.ReactNode;
-  href: string;
-}
-
-function PageLink({ children, href }: PageLinkProps) {
-  return (
-    <Link href={href} className="underline underline-offset-2 text-indigo-400">
-      {children}
-    </Link>
   );
 }
