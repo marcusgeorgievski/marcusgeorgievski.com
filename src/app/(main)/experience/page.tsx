@@ -6,9 +6,8 @@ import ExperienceSection from "@/components/experience/experience-section";
 export default function ExperiencePage() {
   return (
     <div className="space-y-16">
-      <ResumeButton />
-
       <ExperienceSection listOnly />
+      <ResumeButton />
     </div>
   );
 }
@@ -21,7 +20,7 @@ function ResumeButton() {
     >
       <span className="text-xs">{">"}</span>
       <Code className="text-sm text-slate-400  hover:text-slate-100 underline underline-offset-2 decoration-slate-400">
-        view resume
+        resume
       </Code>
     </button>
   );

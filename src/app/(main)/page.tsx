@@ -1,6 +1,4 @@
-import { Code } from "@/components/core/typography";
 import MessageSection from "@/components/messages/message-section";
-
 import Link from "next/link";
 
 interface HomePageProps {
@@ -33,29 +31,30 @@ export default function HomePage({ searchParams }: HomePageProps) {
 function HomeContent() {
   return (
     <div className="space-y-6 text">
-      <p>
-        Computer Science student at the <strong>University of Guelph</strong>.
+      <ul className="list-disc list-inside">
+        <li>
+          Software Developer @ <strong>KORE Solutions</strong>
+        </li>
+        <li>
+          Computer Science @ <strong>University of Guelph</strong>
+        </li>
+      </ul>
+
+      <p className="flex-1">
+        Interested in distributed systems and DevOps for building
+        high-performance and fault-tolerant systems. Looking to eventually dive
+        deeper into systems programming and low-level development.
       </p>
+
       <p>
-        Currently working as a{" "}
+        See my what I&apos;ve worked on{" "}
         <Link
           href={"/experience"}
-          className="underline underline-offset-2 decoration-slate-600 hover:decoration-slate-500 font-semibold"
+          className="underline underline-offset-2 text-indigo-400 hover:text-indigo-500"
         >
-          Software Developer @ KORE Solutions
-        </Link>{" "}
-        building an internal shareholder portal application, focusing on
-        security and maintainability.
-      </p>
-      {/* <p>
-        Currently working as a <strong>Software Developer @ Dayforce</strong> on
-        the platform architecture team, focusing on building scalable and
-        improving developer experience.
-      </p> */}
-      <p className="flex-1">
-        Interested in systems design and DevOps for building high-performance
-        and fault-tolerant systems. Learning <Code bg>Go</Code>,{" "}
-        <Code bg>.NET</Code> and other backend technologies.
+          here
+        </Link>
+        .
       </p>
     </div>
   );

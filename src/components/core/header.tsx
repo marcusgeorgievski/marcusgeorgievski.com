@@ -87,6 +87,7 @@ function RouteLink({ route }: { route: Route }) {
 
   const isCurrentRoute = pathname === route.path;
 
+  // ? "text-[#8eb0ff] bg-[#11275c] font-medium"
   return (
     <Link
       href={route.path}

@@ -28,7 +28,7 @@ export const experiences: Experience[] = [
     image: "/kore.png",
     alt: "KORE / HTS",
     title: "Software Developer Intern",
-    company: "KORE / HTS",
+    company: "KORE Solutions",
     companyLink: "https://kore.solutions/services.html",
     from: "Sep 2024",
     to: "Dec 2024",

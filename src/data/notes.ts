@@ -37,8 +37,8 @@ export const readingList: ReadingItem[] = [
     href: "https://www.databass.dev/",
   },
   {
-    title: "C# 12 in a Nutshell",
-    href: "https://www.oreilly.com/library/view/c-12-in/9781098147433/",
+    title: "The Linux Programming Interface",
+    href: "https://man7.org/tlpi/",
   },
   {
     title: "C Programming: A Modern Approach",
@@ -53,12 +53,12 @@ export const readingList: ReadingItem[] = [
     href: "https://www.oreilly.com/library/view/understanding-and-using/9781449344535/",
   },
   {
-    title: "The Linux Programming Interface",
-    href: "https://man7.org/tlpi/",
-  },
-  {
     title: "Operating Systems: Three Easy Pieces",
     href: "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+  },
+  {
+    title: "C# 12 in a Nutshell",
+    href: "https://www.oreilly.com/library/view/c-12-in/9781098147433/",
   },
   {
     title: "Introduction to Algorithms",
