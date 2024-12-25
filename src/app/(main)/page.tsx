@@ -33,7 +33,7 @@ function HomeContent() {
     <div className="space-y-6 text">
       <ul className="list-disc list-inside">
         <li>
-          Software Developer @ <strong>KORE Solutions</strong>
+          Software Developer @ <strong>Dayforce</strong>
         </li>
         <li>
           Computer Science @ <strong>University of Guelph</strong>
@@ -47,7 +47,7 @@ function HomeContent() {
       </p>
 
       <p>
-        See my what I&apos;ve worked on{" "}
+        See what I else I&apos;ve done{" "}
         <Link
           href={"/experience"}
           className="underline underline-offset-2 text-indigo-400 hover:text-indigo-500"

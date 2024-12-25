@@ -22,7 +22,7 @@ export const experiences: Experience[] = [
     from: "Jan 2025",
     to: "Aug 2025",
     location: "Toronto, Ontario",
-    description: "Platform Architecture and Developer Experience",
+    description: "Delivery Platform and Developer Experience",
   },
   {
     image: "/kore.png",
@@ -36,8 +36,8 @@ export const experiences: Experience[] = [
     description: "📈 Internal Shareholder Application",
     // Curr bullet in helpers.tsx
     bullets: [
-      "Developing a secure shareholder portal for 1500+ employees using Angular and .NET with Azure",
-      "Driving MVP delivery while ensuring robust security and pixel-perfect UI/UX",
+      "Developed an internal shareholder portal for 1500+ employees using Angular and .NET with Azure",
+      "Focused on delivery of MVP with robust security and pixel-perfect UI/UX",
     ],
   },
   {

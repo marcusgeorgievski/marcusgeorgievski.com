@@ -31,6 +31,7 @@ export const readingList: ReadingItem[] = [
   {
     title: "Designing Data-Intensive Applications",
     href: "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/",
+    status: "in progress",
   },
   {
     title: "Database Internals",
