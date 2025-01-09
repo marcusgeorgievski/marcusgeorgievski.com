@@ -18,7 +18,7 @@ export type Social = {
 export const routes: Route[] = [
   { label: "me", path: "/" },
   { label: "experience", path: "/experience" },
-  { label: "projects", path: "/projects" },
+  // { label: "projects", path: "/projects" },
   { label: "notes", path: "/notes" },
 ];
 

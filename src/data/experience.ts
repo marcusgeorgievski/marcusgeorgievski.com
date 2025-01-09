@@ -20,9 +20,9 @@ export const experiences: Experience[] = [
     company: "Dayforce",
     companyLink: "https://www.dayforce.com",
     from: "Jan 2025",
-    to: "Aug 2025",
+    to: "Present",
     location: "Toronto, Ontario",
-    description: "Delivery Platform and Developer Experience",
+    description: "Developer Experience Engineering",
   },
   {
     image: "/kore.png",
