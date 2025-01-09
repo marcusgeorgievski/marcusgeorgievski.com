@@ -7,11 +7,12 @@ export default function ExperiencePage() {
   return (
     <div className="space-y-16">
       <ExperienceSection listOnly />
-      <ResumeButton />
+      {/* <ResumeButton /> */}
     </div>
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function ResumeButton() {
   return (
     <button

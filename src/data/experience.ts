@@ -37,7 +37,7 @@ export const experiences: Experience[] = [
     // Curr bullet in helpers.tsx
     bullets: [
       "Developed an internal shareholder portal for 1500+ employees using Angular and .NET with Azure",
-      "Focused on delivery of MVP with robust security and pixel-perfect UI/UX",
+      "Responsible for delivery of MVP with robust security, pixel-perfect UI/UX, and a strong focus on maintainability",
     ],
   },
   {
