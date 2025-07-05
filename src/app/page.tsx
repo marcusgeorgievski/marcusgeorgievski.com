@@ -9,7 +9,7 @@ import { FiExternalLink } from "react-icons/fi";
 export default async function HomePage({
   searchParams,
 }: {
-  searchParams: { foo?: string; m?: string };
+  searchParams: Promise<{ foo?: string; m?: string }>;
 }) {
   // Button specific logic. secret.
   const { foo, m } = await searchParams;
