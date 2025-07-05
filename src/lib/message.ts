@@ -2,11 +2,11 @@ import { z } from "zod";
 
 export const messageSchema = z.object({
   name: z.string().min(1, {
-    message: "Name required!",
+    message: "Name required",
   }),
   contact: z.string(),
   message: z.string().min(1, {
-    message: "Message required!",
+    message: "Message required",
   }),
 });
 

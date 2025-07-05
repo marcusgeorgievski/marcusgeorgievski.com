@@ -1,58 +1,48 @@
 export type Experience = {
-  image: string;
-  alt: string;
-  title: string;
+  position: string;
   company: string;
+  image: string;
+  alt?: string;
+  location: string;
+  description?: string;
   companyLink: string;
   from: string;
   to: string;
-  location: string;
-  description?: string;
   bullets?: string[];
-  active?: boolean;
 };
 
 export const experiences: Experience[] = [
   {
-    image: "/dayforce.jpg",
-    alt: "Dayforce",
-    title: "Software Developer Intern",
+    position: "Software Developer Intern",
     company: "Dayforce",
+    image: "/dayforce.jpg",
+    location: "Toronto, Ontario",
+    description:
+      "Developer Experience Engineering. Worked on infrastructure automation, microservice onboarding processes, and internal tooling for code quality improvements",
     companyLink: "https://www.dayforce.com",
     from: "Jan 2025",
     to: "Present",
-    location: "Toronto, Ontario",
-    description: "Developer Experience Engineering",
   },
   {
-    image: "/kore.png",
-    alt: "KORE / HTS",
-    title: "Software Developer Intern",
+    position: "Software Developer Intern",
     company: "KORE Solutions",
-    companyLink: "https://kore.solutions/services.html",
+    image: "/kore.png",
+    location: "Toronto, Ontario",
+    description:
+      "Internal Shareholder Application. Developed a shareholder management system enabling employees to view equity holdings and administrators to efficiently configure stock allocations",
+    companyLink: "https://kore.solutions/",
     from: "Sep 2024",
     to: "Dec 2024",
-    location: "Toronto, Ontario",
-    description: "📈 Internal Shareholder Application",
-    // Curr bullet in helpers.tsx
-    bullets: [
-      "Developed an internal shareholder portal for 1500+ employees using Angular and .NET with Azure",
-      "Responsible for delivery of MVP with robust security, pixel-perfect UI/UX, and a strong focus on maintainability",
-    ],
   },
   {
-    image: "/seneca.svg",
-    alt: "Seneca Polytechnic",
-    title: "Full-Stack Developer (contract)",
+    position: "Full-Stack Developer, contract",
     company: "Seneca Polytechnic",
+    image: "/seneca.svg",
+    location: "Toronto, Ontario",
+    description:
+      "Applied Research Portal. Optimized database operations, implemented efficient data fetching patterns, and architected application routing for the research portal system",
     companyLink: "https://www.senecapolytechnic.ca/innovation/research.html",
     from: "Jun 2024",
     to: "Aug 2024",
-    location: "Toronto, Ontario",
-    description: "🧪 Applied Research Portal",
-    bullets: [
-      "Supported the development and delivery of an applied research portal",
-      "Led weekly code reviews, optimized database schema and query patterns, boosted bug resolution rate",
-    ],
   },
 ];

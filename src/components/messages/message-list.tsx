@@ -2,18 +2,13 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-
 import moment from "moment-timezone";
 import { deleteMessage } from "@/actions/messages";
 import { useTransition } from "react";
-import {
-  ChevronDownIcon,
-  ChevronUpIcon,
-  GridIcon,
-  LayersIcon,
-  TrashIcon,
-} from "@radix-ui/react-icons";
-import { Message } from "@/data/messages";
+import { Message } from "@/lib/message";
+import { LuChevronDown, LuChevronUp } from "react-icons/lu";
+import { CiGrid2H, CiGrid41 } from "react-icons/ci";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 interface MessageListProps {
   messages: Message[];
@@ -38,22 +33,22 @@ export default function MessageList({ messages }: MessageListProps) {
         onClick={() => setOpen(!open)}
         className="font-mono text-slate-600 text-xs hover:text-slate-300 flex items-center gap-2"
       >
-        {open ? <ChevronUpIcon /> : <ChevronDownIcon />} messages (
-        {messages.length}){" "}
+        {open ? <LuChevronUp /> : <LuChevronDown />} messages ({messages.length}
+        ){" "}
       </button>
 
       {open && (
         <>
           <div className="flex gap-2 mt-2">
             <button onClick={() => setGrid(true)} className="p-1">
-              <GridIcon
+              <CiGrid41
                 className={`${
                   grid ? "text-slate-300" : "text-slate-600"
                 } text-xs`}
               />
             </button>
             <button onClick={() => setGrid(false)} className="p-1">
-              <LayersIcon
+              <CiGrid2H
                 className={`${
                   grid ? "text-slate-600" : "text-slate-200"
                 } text-sm`}
@@ -66,8 +61,6 @@ export default function MessageList({ messages }: MessageListProps) {
             } mt-8 gap-10`}
           >
             {messages.map((message) => {
-              // let date = new Date(message.createdAt)
-              // date = new Date(date.getTime() - 5 * 60 * 60 * 1000)
               const date = moment(message.createdAt)
                 .tz("America/New_York")
                 .format("MMM DD YYYY - hh:mm A");
@@ -76,20 +69,7 @@ export default function MessageList({ messages }: MessageListProps) {
                 <div key={message.id} className="relative border-l-2 pl-2">
                   <div className="font-mono text-xs dark:text-slate-600 text-slate-500 mb-2">
                     <p>{message.name}</p>
-                    <p>
-                      {/* {date.toLocaleDateString("en-US", {
-                                                year: "numeric",
-                                                month: "short",
-                                                day: "numeric",
-                                            })}
-                                            {" - "}
-                                            {date.toLocaleTimeString("en-US", {
-                                                hour: "2-digit",
-                                                minute: "2-digit",
-                                                hour12: true,
-                                            })} */}
-                      {date}
-                    </p>
+                    <p>{date}</p>
                     <p className="font-mono text-xs dark:text-slate-600 text-slate-500">
                       {message.contact}
                     </p>
@@ -103,7 +83,7 @@ export default function MessageList({ messages }: MessageListProps) {
                     disabled={isPending}
                     onClick={() => delMessage(message.id)}
                   >
-                    <TrashIcon className="text-red-800 text-xs top-2 right-2 absolute opacity-60" />
+                    <FaRegTrashAlt className="text-red-800 text-xs top-2 right-2 absolute opacity-60" />
                   </button>
                 </div>
               );

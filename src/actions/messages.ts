@@ -2,7 +2,7 @@
 
 import { z } from "zod";
 import sql from "../lib/db";
-import { Message, messageSchema } from "@/data/messages";
+import { Message, messageSchema } from "@/lib/message";
 
 export async function getMessages() {
   try {

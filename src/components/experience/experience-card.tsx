@@ -1,81 +1,63 @@
 import { Experience } from "@/data/experience";
-import { experienceHtmlBullets } from "@/data/helpers";
+// import { experienceHtmlBullets } from "@/data/helpers";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ExperienceCard({
-  image,
-  alt,
-  title,
-  company,
-  companyLink,
-  from,
-  to,
-  location,
-  description,
-  bullets,
-}: Experience) {
-  function getInfo() {
-    const res = experienceHtmlBullets(company);
+type ExperienceCardProps = {
+  experience: Experience;
+};
 
-    if (res != null) {
-      return res;
-    }
-    if (bullets) {
-      return (
-        <ul className="space-y-1">
-          {bullets.map((responsibility, index) => (
-            <li key={index} className="ml-[53px] sm:ml-[56px] list-disc">
-              {responsibility}
-            </li>
-          ))}
-        </ul>
-      );
-    }
-
-    if (description) {
-      return (
-        <ul className="space-y-1">
-          <li className="ml-[53px] sm:ml-[56px]  list-disc">{description}</li>
-        </ul>
-      );
-    }
-  }
-
+export default function ExperienceCard({ experience }: ExperienceCardProps) {
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex sm:gap-3 gap-4 items-start">
-        <Image
-          src={image}
-          alt={alt}
-          width={80}
-          height={80}
-          className="rounded-sm sm:w-[30px] w-[23px] sm:h-[30px] h-[23px]"
-        />
+    <div className="flex gap-3">
+      <Image
+        src={experience.image}
+        alt={experience.alt || "Company Logo"}
+        width={80}
+        height={80}
+        className="rounded-sm sm:w-[30px] w-[23px] sm:h-[30px] h-[23px]"
+      />
 
-        <div className="gap-0.5 ">
-          <div className="flex items-center">
-            <h3 className="sm:text-lg text-base leading-tight sm:mb-1 mb-2">
-              {title} @{" "}
-              <Link
-                href={companyLink}
-                className="underline underline-offset-2 decoration-slate-600 hover:decoration-slate-400"
-              >
-                {company}
-              </Link>
-            </h3>
-          </div>
-          <p className="sm:text-[15px] text-[13px] font-light text-slate-500 leading-tight">
-            <span className="whitespace-nowrap">
-              {from} – {to}
-            </span>{" "}
-            <span className="sm:px-1.5 px-1">·</span>{" "}
-            <span className="whitespace-nowrap">{location}</span>{" "}
-          </p>
-        </div>
+      <div>
+        <Title />
+        <Date />
+        <Description />
       </div>
-
-      <div className="text-slate-400">{getInfo()}</div>
     </div>
   );
+
+  function Title() {
+    return (
+      <h3 className="sm:text-lg text-base font-medium leading-tight sm:mb-1 mb-2">
+        {experience.position} •{" "}
+        <Link
+          href={experience.companyLink}
+          target="_blank"
+          className="underline underline-offset-2 decoration-slate-700 hover:decoration-slate-400"
+        >
+          {experience.company}
+        </Link>
+      </h3>
+    );
+  }
+
+  function Date({ location = false }: { location?: boolean }) {
+    return (
+      <p className="sm:text-[15px] text-[13px] font-light text-slate-500 leading-tight mb-2">
+        <span className="whitespace-nowrap">
+          {experience.from} – {experience.to}
+        </span>{" "}
+        {location && (
+          <>
+            <span className="sm:px-1.5 px-1">·</span>{" "}
+            <span className="whitespace-nowrap">{experience.location}</span>{" "}
+          </>
+        )}
+      </p>
+    );
+  }
+
+  function Description() {
+    return <p className="text-slate-300 text-sm">{experience.description}</p>;
+  }
 }

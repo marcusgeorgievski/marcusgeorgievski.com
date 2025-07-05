@@ -1,11 +1,21 @@
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter, JetBrains_Mono } from "next/font/google";
 
-export const inter = Inter({ subsets: ["latin"] });
-export const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
+export const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
-import localFont from "next/font/local";
+export const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
-export const cmu = localFont({
-  src: "../../public/cmunrm.ttf",
-  display: "swap",
+export const inter = Inter({
+  variable: "--font-inter-latin",
+  subsets: ["latin"],
+});
+
+export const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
 });

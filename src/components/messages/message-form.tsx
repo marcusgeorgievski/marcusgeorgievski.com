@@ -5,9 +5,9 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { jetBrainsMono } from "../../lib/fonts";
 import { cn } from "../../lib/utils";
-import { TextAlignLeftIcon } from "@radix-ui/react-icons";
+
 import { createMessage } from "@/actions/messages";
-import { useToast } from "@/hooks/use-toast";
+// import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { Button } from "../ui/button";
@@ -22,11 +22,12 @@ import {
 } from "../ui/form";
 import { Textarea } from "../ui/textarea";
 import { Input } from "../ui/input";
-import { messageSchema } from "@/data/messages";
+import { PiTextAlignLeftLight } from "react-icons/pi";
+import { messageSchema } from "@/lib/message";
+import { toast } from "sonner";
 
 export default function MessageForm() {
   const [isPending, startTransition] = useTransition();
-  const { toast } = useToast();
   const router = useRouter();
 
   const form = useForm<z.infer<typeof messageSchema>>({
@@ -42,15 +43,10 @@ export default function MessageForm() {
     startTransition(async () => {
       createMessage(values).then((res) => {
         if (res?.error) {
-          toast({
-            title: "Error",
-            description: "Something went wrong :(",
-            variant: "destructive",
-          });
+          toast.error("Error. Something went wrong :(");
           return;
         }
-        toast({
-          title: res?.title || "Message sent!",
+        toast("Message sent!", {
           description: res?.description || "Thanks " + values.name + "!",
         });
         form.resetField("message");
@@ -67,8 +63,8 @@ export default function MessageForm() {
           "text-sm text-slate-400 mb-8 animate-fade-in  px-1  flex items-center gap-3 border-b pb-2 border-zinc-800"
         )}
       >
-        <TextAlignLeftIcon height={16} width={16} />
-        {"message;"}
+        <PiTextAlignLeftLight height={16} width={16} />
+        message
       </h3>
 
       <Form {...form}>

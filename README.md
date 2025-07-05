@@ -1,3 +1,3 @@
 # Personal Site
 
-- [marcusgeorgievski.com](https://marcusgeorgievski.com)
+[marcusgeorgievski.com](https://marcusgeorgievski.com)

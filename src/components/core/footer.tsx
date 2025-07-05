@@ -1,37 +1,83 @@
-import React from "react";
-import { SocialIcon } from "./header";
-import { socials } from "@/data/core";
-import { Code } from "./typography";
 import Link from "next/link";
 
+type FooterLink = {
+  href: string;
+  label: string;
+  external?: boolean;
+};
+
+type FooterSection = {
+  title: string;
+  links: FooterLink[];
+};
 export default function Footer() {
+  const footerSections: FooterSection[] = [
+    {
+      title: "Resources",
+      links: [
+        { href: "https://log.marcusgeorgievski.com", label: "Log" },
+        { href: "https://marcusgeorgievski.com", label: "Site" },
+      ],
+    },
+    {
+      title: "Connect",
+      links: [
+        {
+          href: "https://github.com/marcusgeorgievski",
+          label: "GitHub",
+          external: true,
+        },
+        {
+          href: "https://www.linkedin.com/in/marcusgeorgievski",
+          label: "LinkedIn",
+          external: true,
+        },
+        {
+          href: "https://devpost.com/marcusgeorgievski",
+          label: "Devpost",
+          external: true,
+        },
+      ],
+    },
+  ];
+
   return (
-    <div className="pb-10 opacity-60 mt-6">
-      <nav className="items-center gap-4 text-slate-400 flex flex-col w-full">
-        {socials.map((social, index) => {
-          return (
-            <div
-              key={index}
-              className="flex items-center justify-between w-full"
-            >
-              <div className="flex gap-2 items-center">
-                <SocialIcon social={social} index={index} /> {social.label}
-              </div>
-              <span className="flex-grow border-t border-dotted border-slate-600 mx-2"></span>
-              <Link
-                href={social.href}
-                target="_blank"
-                className="underline underline-offset-2"
-              >
-                <Code className="space-x-0.5 text-slate-400">
-                  <span>@</span>
-                  <span>{social.tag.slice(1)}</span>
-                </Code>
-              </Link>{" "}
-            </div>
-          );
-        })}
-      </nav>
-    </div>
+    <footer className="py-8 border-t border-t-zinc-100 dark:border-t-zinc-900 order-3 px-6 md:px-10">
+      <div className="max-w-lg mx-auto grid gap-y-14 grid-cols-2 md:grid-cols-3 justify-between">
+        {footerSections.map((section) => (
+          <div key={section.title}>
+            <h1 className="font-medium">{section.title}</h1>
+            <ul className="mt-4 space-y-2">
+              {section.links.map((link) => (
+                <li key={link.href}>
+                  {link.external ? (
+                    <Link
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-zinc-400 dark:text-zinc-600 transition-colors flex items-center gap-2 hover:text-black dark:hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-zinc-400 dark:text-zinc-600 transition-colors hover:text-black dark:hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+        <div className="flex md:justify-end">
+          <p className="text-zinc-400 dark:text-zinc-600 text-sm">
+            © {new Date().getFullYear()}
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 }

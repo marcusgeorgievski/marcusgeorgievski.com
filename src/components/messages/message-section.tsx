@@ -10,10 +10,13 @@ export default function MessageSection({
   foo?: string;
 }) {
   return (
-    <div>
+    <>
       {(m !== undefined || foo !== undefined) && (
         <section className="flex flex-col gap-12">
+          {/* Form */}
           {m === process.env.MESSAGES_KEY && <MessageForm />}
+
+          {/* List */}
           {foo === process.env.MESSAGE_KEY && (
             <>
               <Suspense fallback={<div>Loading...</div>}>
@@ -23,6 +26,6 @@ export default function MessageSection({
           )}
         </section>
       )}
-    </div>
+    </>
   );
 }
