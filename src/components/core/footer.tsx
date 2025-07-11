@@ -15,8 +15,12 @@ export default function Footer() {
     {
       title: "Resources",
       links: [
+        { href: "/", label: "Site" },
+        {
+          href: "/reading-list",
+          label: "Reading list",
+        },
         { href: "https://log.marcusgeorgievski.com", label: "Log" },
-        { href: "https://marcusgeorgievski.com", label: "Site" },
       ],
     },
     {

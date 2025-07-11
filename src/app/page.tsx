@@ -1,11 +1,10 @@
 import MsgButton from "@/components/core/msg-button";
 import Section from "@/components/core/section";
 import { Socials } from "@/components/core/social";
-import ExperienceSection from "@/components/experience/experience-section";
+import ExperienceSection from "@/components/experience/experience-list";
 import MessageSection from "@/components/messages/message-section";
 import Link from "next/link";
 import { FaGraduationCap } from "react-icons/fa6";
-import { FiExternalLink } from "react-icons/fi";
 import { TbBriefcase2Filled } from "react-icons/tb";
 
 export default async function HomePage({
@@ -75,16 +74,14 @@ function About() {
       <p>
         Interested in distributed systems and the challenges of building
         resilient, fault-tolerant architectures that maintain performance at
-        scale. I also keep a log and personal reference notes on what I'm
-        reading{" "}
+        scale. See what I'm reading
         <Link
-          href={"https://log.marcusgeorgievski.com/notes"}
-          target="_blank"
-          className="inline-flex items-center gap-1 text-blue-500 hover:underline group"
+          href={"/reading-list"}
+          className="inline-flex items-center gap-1 text-blue-500 hover:underline"
         >
-          here{" "}
-          <FiExternalLink className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+          here
         </Link>
+        .
       </p>
     </div>
   );

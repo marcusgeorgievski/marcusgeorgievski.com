@@ -28,7 +28,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
 
   function Title() {
     return (
-      <h3 className="sm:text-lg text-base font-medium leading-tight sm:mb-1 mb-2">
+      <h3 className="sm:text-lg text-base font-medium leading-tight mb-1">
         {experience.position} •{" "}
         <Link
           href={experience.companyLink}
@@ -43,7 +43,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
 
   function Date({ location = false }: { location?: boolean }) {
     return (
-      <p className="sm:text-[15px] text-[13px] font-light text-slate-500 leading-tight mb-2">
+      <p className="text-sm font-light text-slate-500 leading-tight mb-2">
         <span className="whitespace-nowrap">
           {experience.from} – {experience.to}
         </span>{" "}
