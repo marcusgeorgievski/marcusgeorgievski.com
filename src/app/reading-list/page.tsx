@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import ReadingListTable from "./reading-list";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 export default function ReadingListPage() {
   return (
@@ -12,7 +12,9 @@ export default function ReadingListPage() {
 
       <h1 className="text-2xl font-bold">Reading List</h1>
 
-      <ReadingListTable />
+      <Suspense>
+        <ReadingListTable />
+      </Suspense>
     </div>
   );
 }
