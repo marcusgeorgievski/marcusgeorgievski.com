@@ -17,10 +17,10 @@ export default function Footer() {
       links: [
         { href: "/", label: "Site" },
         {
-          href: "/reading-list",
+          href: "/reading-list/?tag=computing",
           label: "Reading list",
         },
-        { href: "https://log.marcusgeorgievski.com", label: "Log" },
+        // { href: "https://log.marcusgeorgievski.com", label: "Log" },
       ],
     },
     {

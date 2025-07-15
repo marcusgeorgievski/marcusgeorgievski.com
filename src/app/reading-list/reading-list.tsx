@@ -1,32 +1,45 @@
 "use client";
-import { useState } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Resource, resources, Tag } from "@/data/reading-list";
 import { Button } from "@/components/ui/button";
+import { useSearchParams } from "next/navigation";
 
 export default function ReadingListTable() {
-  const [books, setBooks] = useState<Resource[]>(resources);
-  const [filterTag, setFilterTag] = useState<Tag | null>(null);
+  const searchParams = useSearchParams();
+  const tagParam = searchParams.get("tag");
 
-  function handleTagClick(tag: Tag) {
-    if (filterTag === tag) {
-      setFilterTag(null);
-      setBooks(resources);
-    } else {
-      setFilterTag(tag);
-      const filteredBooks = resources.filter((book) => book.tags.includes(tag));
-      setBooks(filteredBooks);
-    }
-  }
+  const tag: Tag | null = useMemo(
+    () =>
+      Object.values(Tag).find(
+        (tag) => tag.toLowerCase() === tagParam?.toLowerCase()
+      ) ?? null,
+    [tagParam]
+  );
+
+  const [filterTag, setFilterTag] = useState<Tag | null>(tag);
+
+  const filteredBooks: Resource[] = useMemo(() => {
+    if (!filterTag) return resources;
+    return resources.filter((book) => book.tags.includes(filterTag));
+  }, [filterTag]);
+
+  const handleTagClick = useCallback((tag: Tag | null) => {
+    window.history.replaceState({}, document.title, window.location.pathname);
+    setFilterTag(tag);
+  }, []);
+
+  const handleAllClick = useCallback(() => {
+    handleTagClick(null);
+  }, [handleTagClick]);
 
   return (
     <div className="flex flex-col gap-8">
       <div className="flex items-center gap-2">
         <Button
           className="text-xs font-semibold"
-          key={"all"}
           size="sm"
-          onClick={() => handleTagClick(filterTag!)}
+          onClick={handleAllClick}
           variant={filterTag === null ? "default" : "secondary"}
         >
           All
@@ -46,7 +59,7 @@ export default function ReadingListTable() {
 
       <Table>
         <TableBody>
-          {books.map((book) => (
+          {filteredBooks.map((book) => (
             <TableRow key={book.title}>
               <TableCell className="text-xs font-bold text-neutral-100">
                 <div className="flex flex-col gap-1 whitespace-normal min-w-[250px]">

@@ -74,14 +74,15 @@ function About() {
       <p>
         Interested in distributed systems and the challenges of building
         resilient, fault-tolerant architectures that maintain performance at
-        scale. See what I'm reading
+        scale.
+        {/* See what I'm reading
         <Link
           href={"/reading-list"}
           className="inline-flex items-center gap-1 text-blue-500 hover:underline"
         >
           here
-        </Link>
-        .
+        </Link> 
+        . */}
       </p>
     </div>
   );
