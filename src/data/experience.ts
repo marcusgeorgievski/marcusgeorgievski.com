@@ -21,7 +21,7 @@ export const experiences: Experience[] = [
       "Developer Experience Engineering. Worked on infrastructure automation, microservice onboarding processes, and internal tooling for code quality improvements",
     companyLink: "https://www.dayforce.com",
     from: "Jan 2025",
-    to: "Present",
+    to: "Aug 2025",
   },
   {
     position: "Software Developer Intern",

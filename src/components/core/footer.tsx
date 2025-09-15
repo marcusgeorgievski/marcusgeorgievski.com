@@ -14,14 +14,7 @@ export default function Footer() {
   const footerSections: FooterSection[] = [
     {
       title: "Resources",
-      links: [
-        { href: "/", label: "Site" },
-        {
-          href: "/reading-list/?tag=computing",
-          label: "Reading list",
-        },
-        // { href: "https://log.marcusgeorgievski.com", label: "Log" },
-      ],
+      links: [{ href: "/", label: "Site" }],
     },
     {
       title: "Connect",
@@ -34,11 +27,6 @@ export default function Footer() {
         {
           href: "https://www.linkedin.com/in/marcusgeorgievski",
           label: "LinkedIn",
-          external: true,
-        },
-        {
-          href: "https://devpost.com/marcusgeorgievski",
-          label: "Devpost",
           external: true,
         },
       ],
