@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { geistSans, jetBrainsMono, tinos } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Marcus Georgievski",
-  description: "Website",
+  description: "Personal site",
 };
 
 export default function RootLayout({
