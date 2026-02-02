@@ -8,6 +8,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { experiences } from "@/data/experience";
 
 export default function HomePage() {
   return (
@@ -19,12 +20,19 @@ export default function HomePage() {
             Software Developer
           </h2>
           <div className="flex items-center gap-4">
-            <Link href={"https://github.com/marcusgeorgievski"} target="_blank">
+            <Link
+              href={"https://github.com/marcusgeorgievski"}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Marcus Georgievski's GitHub profile"
+            >
               <GitHubLogoIcon className="h-5 w-5 hover:scale-110 transition-all" />
             </Link>
             <Link
               href={"https://www.linkedin.com/in/marcusgeorgievski"}
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Marcus Georgievski's LinkedIn profile"
             >
               <LinkedInLogoIcon className="h-5 w-5 hover:scale-110 transition-all" />
             </Link>
@@ -48,6 +56,8 @@ export default function HomePage() {
         <Link
           href={"https://texset.io"}
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit TeXset.io"
           className="h-40 relative border rounded-lg block hover:scale-103 transition-all overflow-hidden"
         >
           <Image
@@ -62,6 +72,7 @@ export default function HomePage() {
           <Link
             href={"https://texset.io"}
             target="_blank"
+            rel="noopener noreferrer"
             className="underline font-bold animate-accordion-up"
           >
             TeXset.io
@@ -80,35 +91,9 @@ export default function HomePage() {
       </Section>
 
       <Section title="Experience" className="space-y-10">
-        <ExperienceCard
-          role="Software Developer"
-          company="Dayforce"
-          companyUrl="https://www.dayforce.com/"
-          startDate="Jan 2025"
-          endDate="Aug 2025"
-          highlight="Developer Experience Engineering."
-          description="Worked on infrastructure automation, microservice onboarding processes, and internal tooling for code quality improvements."
-        />
-
-        <ExperienceCard
-          role="Software Developer Intern"
-          company="KORE Solutions"
-          companyUrl="https://kore.solutions/"
-          startDate="Sep 2024"
-          endDate="Dec 2024"
-          highlight="Internal Business Applications."
-          description="Developed an MVP for a secure internal application for employee stock management and administrative allocation workflows."
-        />
-
-        <ExperienceCard
-          role="Full-Stack Developer, contract"
-          company="Seneca Polytechnic"
-          companyUrl="https://www.senecapolytechnic.ca/innovation/research.html"
-          startDate="Jun 2024"
-          endDate="Aug 2024"
-          highlight="Applied Research Portal."
-          description="Optimized database operations, implemented efficient data fetching patterns, and architected application routing for a research portal."
-        />
+        {experiences.map((experience, index) => (
+          <ExperienceCard key={index} {...experience} />
+        ))}
       </Section>
     </div>
   );
@@ -139,7 +124,12 @@ function ExperienceCard({
       <div className="mb-2">
         <p className="font-medium">
           {role} @{" "}
-          <Link href={companyUrl} className="underline">
+          <Link
+            href={companyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
             {company}
           </Link>
         </p>

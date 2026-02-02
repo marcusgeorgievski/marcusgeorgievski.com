@@ -6,9 +6,13 @@ import moment from "moment-timezone";
 import { deleteMessage } from "@/actions/messages";
 import { useTransition } from "react";
 import { Message } from "@/lib/message";
-import { LuChevronDown, LuChevronUp } from "react-icons/lu";
-import { CiGrid2H, CiGrid41 } from "react-icons/ci";
-import { FaRegTrashAlt } from "react-icons/fa";
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  DashboardIcon,
+  SectionIcon,
+  TrashIcon,
+} from "@radix-ui/react-icons";
 
 interface MessageListProps {
   messages: Message[];
@@ -33,22 +37,22 @@ export default function MessageList({ messages }: MessageListProps) {
         onClick={() => setOpen(!open)}
         className="font-mono text-slate-600 text-xs hover:text-slate-300 flex items-center gap-2"
       >
-        {open ? <LuChevronUp /> : <LuChevronDown />} messages ({messages.length}
-        ){" "}
+        {open ? <ChevronUpIcon /> : <ChevronDownIcon />} messages (
+        {messages.length}){" "}
       </button>
 
       {open && (
         <>
           <div className="flex gap-2 mt-2">
             <button onClick={() => setGrid(true)} className="p-1">
-              <CiGrid41
+              <DashboardIcon
                 className={`${
                   grid ? "text-slate-300" : "text-slate-600"
                 } text-xs`}
               />
             </button>
             <button onClick={() => setGrid(false)} className="p-1">
-              <CiGrid2H
+              <SectionIcon
                 className={`${
                   grid ? "text-slate-600" : "text-slate-200"
                 } text-sm`}
@@ -83,7 +87,7 @@ export default function MessageList({ messages }: MessageListProps) {
                     disabled={isPending}
                     onClick={() => delMessage(message.id)}
                   >
-                    <FaRegTrashAlt className="text-red-800 text-xs top-2 right-2 absolute opacity-60" />
+                    <TrashIcon className="text-red-800 text-xs top-2 right-2 absolute opacity-60" />
                   </button>
                 </div>
               );

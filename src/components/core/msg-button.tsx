@@ -3,8 +3,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { scrollTo } from "@/lib/utils";
-import { GiCapybara } from "react-icons/gi";
-import { FaArrowDown } from "react-icons/fa";
+import { ArrowDownIcon, HeartFilledIcon } from "@radix-ui/react-icons";
 
 type MsgButtonProps = {
   m: string;
@@ -25,9 +24,9 @@ export default function MsgButton({
           onClick={() => scrollTo("message")}
           className="flex items-center gap-2  transition-colors bg-indigo-300 text-indigo-900"
         >
-          <GiCapybara />
+          <HeartFilledIcon />
           {buttonText}
-          <FaArrowDown />
+          <ArrowDownIcon />
         </Button>
       )}
     </>

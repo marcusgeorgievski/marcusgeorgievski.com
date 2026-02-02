@@ -1,48 +1,34 @@
-export type Experience = {
-  position: string;
-  company: string;
-  image: string;
-  alt?: string;
-  location: string;
-  description?: string;
-  companyLink: string;
-  from: string;
-  to: string;
-  bullets?: string[];
-};
+import { ExperienceCardProps } from "@/app/page";
 
-export const experiences: Experience[] = [
+export const experiences: ExperienceCardProps[] = [
   {
-    position: "Software Developer Intern",
+    role: "Software Developer",
     company: "Dayforce",
-    image: "/dayforce.jpg",
-    location: "Toronto, Ontario",
+    companyUrl: "https://www.dayforce.com/",
+    startDate: "Jan 2025",
+    endDate: "Aug 2025",
+    highlight: "Developer Experience Engineering.",
     description:
-      "Developer Experience Engineering. Worked on infrastructure automation, microservice onboarding processes, and internal tooling for code quality improvements",
-    companyLink: "https://www.dayforce.com",
-    from: "Jan 2025",
-    to: "Aug 2025",
+      "Worked on infrastructure automation, microservice onboarding processes, and internal tooling for code quality improvements.",
   },
   {
-    position: "Software Developer Intern",
+    role: "Software Developer Intern",
     company: "KORE Solutions",
-    image: "/kore.png",
-    location: "Toronto, Ontario",
+    companyUrl: "https://kore.solutions/",
+    startDate: "Sep 2024",
+    endDate: "Dec 2024",
+    highlight: "Internal Business Applications.",
     description:
-      "Internal Shareholder Application. Developed a shareholder management system enabling employees to view equity holdings and administrators to efficiently configure stock allocations",
-    companyLink: "https://kore.solutions/",
-    from: "Sep 2024",
-    to: "Dec 2024",
+      "Developed an MVP for a secure internal application for employee stock management and administrative allocation workflows.",
   },
   {
-    position: "Full-Stack Developer, contract",
+    role: "Full-Stack Developer, contract",
     company: "Seneca Polytechnic",
-    image: "/seneca.svg",
-    location: "Toronto, Ontario",
+    companyUrl: "https://www.senecapolytechnic.ca/innovation/research.html",
+    startDate: "Jun 2024",
+    endDate: "Aug 2024",
+    highlight: "Applied Research Portal.",
     description:
-      "Applied Research Portal. Optimized database operations, implemented efficient data fetching patterns, and architected application routing for the research portal system",
-    companyLink: "https://www.senecapolytechnic.ca/innovation/research.html",
-    from: "Jun 2024",
-    to: "Aug 2024",
+      "Optimized database operations, implemented efficient data fetching patterns, and architected application routing for a research portal.",
   },
 ];

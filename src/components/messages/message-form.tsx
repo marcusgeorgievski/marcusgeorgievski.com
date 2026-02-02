@@ -22,9 +22,9 @@ import {
 } from "../ui/form";
 import { Textarea } from "../ui/textarea";
 import { Input } from "../ui/input";
-import { PiTextAlignLeftLight } from "react-icons/pi";
 import { messageSchema } from "@/lib/message";
 import { toast } from "sonner";
+import { TextAlignLeftIcon } from "@radix-ui/react-icons";
 
 export default function MessageForm() {
   const [isPending, startTransition] = useTransition();
@@ -60,10 +60,10 @@ export default function MessageForm() {
       <h3
         className={cn(
           jetBrainsMono.className,
-          "text-sm text-slate-400 mb-8 animate-fade-in  px-1  flex items-center gap-3 border-b pb-2 border-zinc-800"
+          "text-sm text-slate-400 mb-8 animate-fade-in  px-1  flex items-center gap-3 border-b pb-2 border-zinc-800",
         )}
       >
-        <PiTextAlignLeftLight height={16} width={16} />
+        <TextAlignLeftIcon height={16} width={16} />
         message
       </h3>
 
