@@ -19,3 +19,11 @@ export const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
+
+import { Tinos } from "next/font/google";
+
+export const tinos = Tinos({
+  variable: "--font-tinos",
+  weight: "400",
+  subsets: ["latin"],
+});
