@@ -5,13 +5,13 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function scrollTo(section: string) {
+export function scrollTo(section: string, instant?: boolean) {
   const element = document.getElementById(section);
 
   if (section == "me") {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: instant ? "instant" : "smooth",
     });
     return;
   }
@@ -25,7 +25,7 @@ export function scrollTo(section: string) {
 
     window.scrollTo({
       top: targetScrollPosition,
-      behavior: "smooth",
+      behavior: instant ? "instant" : "smooth",
     });
   }
 }

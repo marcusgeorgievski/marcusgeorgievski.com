@@ -13,11 +13,7 @@ type FooterSection = {
 export default function Footer() {
   const footerSections: FooterSection[] = [
     {
-      title: "Resources",
-      links: [{ href: "/", label: "Site" }],
-    },
-    {
-      title: "Connect",
+      title: "Links",
       links: [
         {
           href: "https://github.com/marcusgeorgievski",
@@ -64,11 +60,6 @@ export default function Footer() {
             </ul>
           </div>
         ))}
-        <div className="flex md:justify-end">
-          <p className="text-zinc-400 dark:text-zinc-600 text-sm">
-            © {new Date().getFullYear()}
-          </p>
-        </div>
       </div>
     </footer>
   );

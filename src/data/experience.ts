@@ -1,4 +1,4 @@
-import { ExperienceCardProps } from "@/app/page";
+import { ExperienceCardProps } from "@/components/experience-card";
 
 export const experiences: ExperienceCardProps[] = [
   {

@@ -46,16 +46,12 @@ export default function MessageList({ messages }: MessageListProps) {
           <div className="flex gap-2 mt-2">
             <button onClick={() => setGrid(true)} className="p-1">
               <DashboardIcon
-                className={`${
-                  grid ? "text-slate-300" : "text-slate-600"
-                } text-xs`}
+                className={`${grid ? "text-primary" : "text-muted-foreground/50"} text-xs`}
               />
             </button>
             <button onClick={() => setGrid(false)} className="p-1">
               <SectionIcon
-                className={`${
-                  grid ? "text-slate-600" : "text-slate-200"
-                } text-sm`}
+                className={`${!grid ? "text-primary" : "text-muted-foreground/50"} text-sm`}
               />
             </button>
           </div>
@@ -78,7 +74,6 @@ export default function MessageList({ messages }: MessageListProps) {
                       {message.contact}
                     </p>
                   </div>
-
                   <p className="font-mono text-xs dark:text-slate-300 text-slate-800 text-wrap break-words ">
                     {message.body}
                   </p>

@@ -1,14 +1,13 @@
 "use client";
 
-import React from "react";
 import { Button } from "../ui/button";
 import { scrollTo } from "@/lib/utils";
 import { ArrowDownIcon, HeartFilledIcon } from "@radix-ui/react-icons";
 
 type MsgButtonProps = {
-  m: string;
-  messagesKey: string;
-  buttonText: string;
+  m?: string;
+  messagesKey?: string;
+  buttonText?: string;
 };
 
 export default function MsgButton({
@@ -21,7 +20,7 @@ export default function MsgButton({
     <>
       {m === messagesKey && (
         <Button
-          onClick={() => scrollTo("message")}
+          onClick={() => scrollTo("message", true)}
           className="flex items-center gap-2  transition-colors bg-indigo-300 text-indigo-900"
         >
           <HeartFilledIcon />

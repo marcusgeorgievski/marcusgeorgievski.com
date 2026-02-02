@@ -25,6 +25,7 @@ import { Input } from "../ui/input";
 import { messageSchema } from "@/lib/message";
 import { toast } from "sonner";
 import { TextAlignLeftIcon } from "@radix-ui/react-icons";
+import { Separator } from "@radix-ui/react-separator";
 
 export default function MessageForm() {
   const [isPending, startTransition] = useTransition();
@@ -60,12 +61,14 @@ export default function MessageForm() {
       <h3
         className={cn(
           jetBrainsMono.className,
-          "text-sm text-slate-400 mb-8 animate-fade-in  px-1  flex items-center gap-3 border-b pb-2 border-zinc-800",
+          "text-sm text-slate-400 animate-fade-in  px-1  flex items-center gap-3 border-zinc-800",
         )}
       >
-        <TextAlignLeftIcon height={16} width={16} />
+        <TextAlignLeftIcon />
         message
       </h3>
+
+      <Separator className="h-[0.5px] bg-primary my-4" />
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
