@@ -9,26 +9,38 @@ import Link from "next/link";
 import { experiences } from "@/data/experience";
 import { HomeSection } from "@/components/home-section";
 import { ExperienceCard } from "@/components/experience-card";
+import { FloatingTOC } from "@/components/floating-toc";
 
 export default function HomePageContent() {
   return (
-    <div className="flex flex-col gap-20">
-      <HomeHeader />
+    <>
+      <FloatingTOC />
+      <div className="flex flex-col gap-20">
+        <HomeHeader />
 
-      <HomeSection title="About" className="space-y-5 text-base text-darker">
-        <AboutSection />
-      </HomeSection>
+        <HomeSection
+          id="about"
+          title="About"
+          className="space-y-5 text-base text-darker"
+        >
+          <AboutSection />
+        </HomeSection>
 
-      <HomeSection title="Featured" className="space-y-3 text-darker">
-        <FeaturedSection />
-      </HomeSection>
+        <HomeSection id="featured" title="Featured" className="space-y-3 text-darker">
+          <FeaturedSection />
+        </HomeSection>
 
-      <HomeSection title="Experience" className="space-y-10 text-darker">
-        {experiences.map((experience, index) => (
-          <ExperienceCard key={index} {...experience} />
-        ))}
-      </HomeSection>
-    </div>
+        <HomeSection
+          id="experience"
+          title="Experience"
+          className="space-y-10 text-darker"
+        >
+          {experiences.map((experience, index) => (
+            <ExperienceCard key={index} {...experience} />
+          ))}
+        </HomeSection>
+      </div>
+    </>
   );
 }
 
@@ -87,13 +99,13 @@ function FeaturedSection() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Visit TeXset.io"
-        className="h-40 relative border rounded-lg block hover:scale-103 transition-all overflow-hidden"
+        className="group relative block h-44 rounded-xl overflow-hidden border border-border/50 hover:shadow-[0_0_30px_-5px] hover:shadow-primary/20 hover:border-primary/30 transition-all duration-300"
       >
         <Image
-          src={"/texset2.png"}
+          src={"/banner.png"}
           alt="texset.io"
           fill
-          className="object-cover"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </Link>
 

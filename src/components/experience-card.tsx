@@ -21,7 +21,7 @@ export function ExperienceCard({
   description,
 }: ExperienceCardProps) {
   return (
-    <div>
+    <div className="group relative pl-4 border-l-2 border-border hover:border-primary/50 transition-colors duration-200">
       {/* Header */}
       <div className="mb-2 text-foreground">
         <p className="font-medium">
